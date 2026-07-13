@@ -6,20 +6,20 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
 <title>PIAX — Principium Identity, Access &amp; Experience Platform</title>
 <style>
   :root {
-    --green: #2d6a4f;
-    --green-light: #40916c;
-    --green-dim: rgba(45, 106, 79, 0.15);
-    --bg: #0b0f0d;
-    --bg-card: #121713;
-    --border: #1f2a22;
-    --text: #eef2ef;
-    --text-dim: #9fb3a6;
+    --accent: #ffaa48;
+    --accent-light: #ffc182;
+    --accent-dim: rgba(255, 170, 72, 0.15);
+    --bg: #000000;
+    --bg-card: #121212;
+    --border: #262626;
+    --text: #f2f2f0;
+    --text-dim: #a3a3a0;
   }
   * { box-sizing: border-box; }
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background: radial-gradient(circle at 20% 0%, #0f1712 0%, var(--bg) 55%);
+    background: radial-gradient(circle at 20% 0%, #0d0d0d 0%, var(--bg) 55%);
     color: var(--text);
     line-height: 1.6;
   }
@@ -29,9 +29,9 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
     font-size: 13px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--green-light);
-    background: var(--green-dim);
-    border: 1px solid var(--green);
+    color: var(--accent-light);
+    background: var(--accent-dim);
+    border: 1px solid var(--accent);
     border-radius: 999px;
     padding: 4px 14px;
     margin-bottom: 24px;
@@ -41,7 +41,7 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
     margin: 0 0 8px;
     letter-spacing: -0.02em;
   }
-  h1 span { color: var(--green-light); }
+  h1 span { color: var(--accent-light); }
   .subtitle {
     font-size: 18px;
     color: var(--text-dim);
@@ -69,7 +69,7 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
   .infra-item h3 {
     margin: 0 0 8px;
     font-size: 15px;
-    color: var(--green-light);
+    color: var(--accent-light);
   }
   .infra-item p { font-size: 14px; margin: 0; }
   .products {
@@ -91,7 +91,7 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
     transition: border-color 0.15s ease, transform 0.15s ease;
   }
   .product-card:not(.disabled):hover {
-    border-color: var(--green);
+    border-color: var(--accent);
     transform: translateY(-2px);
   }
   .product-card.disabled {
@@ -109,12 +109,12 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
     letter-spacing: 0.02em;
   }
   .badge.live {
-    background: var(--green-dim);
-    color: var(--green-light);
-    border: 1px solid var(--green);
+    background: var(--accent-dim);
+    color: var(--accent-light);
+    border: 1px solid var(--accent);
   }
   .badge.soon {
-    background: rgba(159, 179, 166, 0.1);
+    background: rgba(163, 163, 160, 0.1);
     color: var(--text-dim);
     border: 1px solid var(--border);
   }
