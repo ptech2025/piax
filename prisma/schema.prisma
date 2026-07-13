@@ -1,0 +1,83 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ProductKey {
+  QUICKESTIMATE
+  HOME360
+  PORA
+}
+
+enum GrantStatus {
+  PENDING
+  ACTIVE
+  REVOKED
+  FAILED
+}
+
+// A person PIAX knows about — CMO, BizDev, investor, partner, internal staff, etc.
+// Role is a free-text string (not an enum) so new roles can be added without a
+// migration, matching the "extensible without code changes" requirement.
+model Person {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  role      String // e.g. "CMO", "Business Development", "Investor", "Strategic Partner"
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  grants      ProductGrant[]
+  magicLinks  MagicLinkRequest[]
+
+  @@map("person")
+}
+
+// One row per (person, product) — the source of truth for who has access to what.
+model ProductGrant {
+  id             String      @id @default(uuid())
+  personId       String
+  person         Person      @relation(fields: [personId], references: [id], onDelete: Cascade)
+  product        ProductKey
+  status         GrantStatus @default(PENDING)
+  expiresAt      DateTime? // null = never expires
+  externalUserId String? // the user's id in the target product's own DB, once known
+  lastError      String?
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+
+  @@unique([personId, product])
+  @@map("product_grant")
+}
+
+// Every magic link PIAX has generated, for audit + one-time-use tracking.
+model MagicLinkRequest {
+  id        String     @id @default(uuid())
+  personId  String
+  person    Person     @relation(fields: [personId], references: [id], onDelete: Cascade)
+  product   ProductKey
+  url       String
+  expiresAt DateTime?
+  usedAt    DateTime?
+  createdAt DateTime   @default(now())
+
+  @@map("magic_link_request")
+}
+
+// Every action PIAX takes against a connector, so "who granted what, when" is answerable.
+model AuditLog {
+  id             String      @id @default(uuid())
+  actor          String // PIAX admin's email
+  action         String // e.g. "grant_access", "revoke_access", "create_magic_link"
+  targetPersonId String?
+  product        ProductKey?
+  detail         Json?
+  success        Boolean     @default(true)
+  createdAt      DateTime    @default(now())
+
+  @@map("audit_log")
+}
