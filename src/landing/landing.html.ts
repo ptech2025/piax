@@ -100,6 +100,20 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
   }
   .product-name { font-size: 20px; font-weight: 600; }
   .product-desc { font-size: 14px; color: var(--text-dim); margin: 0; }
+  .product-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--accent-dim);
+    border: 1px solid var(--accent);
+    color: var(--accent-light);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .badge {
     align-self: flex-start;
     font-size: 12px;
@@ -132,66 +146,109 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
     <span class="eyebrow">Principium Technology · Internal</span>
     <h1>PI<span>AX</span></h1>
     <p class="subtitle">
-      Principium Identity, Access &amp; Experience Platform — a single, centralized
-      way for leadership, business development, and investors to get into every
-      Principium product, without individual signups, credit cards, or trial limits.
+      Principium Identity, Access &amp; Experience Platform — a single directory
+      of every product Principium Technology has built. Pick a tool below and
+      sign in, sign up, or start a trial the normal way — same as any other user.
     </p>
 
-    <h2>What PIAX does</h2>
+    <h2>What PIAX is</h2>
     <p>
-      Each Principium product — QuickEstimate, Home360, Pora Cloud, and whatever
-      comes next — manages its own users and its own rules. PIAX doesn't replace
-      that. Instead, it sits alongside each product as a small, trusted internal
-      integration: one place to grant someone real, working access to all three
-      platforms, and one place to revoke it later.
+      Each Principium product manages its own accounts, trials, and billing,
+      exactly like it does for any other customer. PIAX doesn't change or
+      bypass that — it's just one page with a link to everything we've built,
+      so you don't have to remember a dozen different URLs.
     </p>
-    <p>
-      No 7-day trial windows. No credit card prompts. No juggling separate
-      logins per product. Just a single hub that knows who should have access
-      to what, and can prove it with a live, working link.
-    </p>
-
-    <h2>How it's built</h2>
-    <div class="grid">
-      <div class="infra-item">
-        <h3>Per-product connectors</h3>
-        <p>Each product exposes its own small internal API (grant, magic-link, revoke), authenticated with a shared secret — PIAX never touches another product's database directly.</p>
-      </div>
-      <div class="infra-item">
-        <h3>Magic links</h3>
-        <p>Access is delivered as a real, working sign-in link generated through each product's own authentication system — better-auth or Clerk — not a separate password to manage.</p>
-      </div>
-      <div class="infra-item">
-        <h3>Centralized people &amp; grants</h3>
-        <p>One record per person, with a clear history of what they've been granted, when, and by whom — auditable from a single place.</p>
-      </div>
-      <div class="infra-item">
-        <h3>Reversible by design</h3>
-        <p>Every grant can be revoked independently, per product, without affecting a person's access anywhere else.</p>
-      </div>
-    </div>
 
     <h2>Products</h2>
     <div class="products">
       <a class="product-card" href="https://www.quickestimate.ai" target="_blank" rel="noopener">
+        <span class="product-logo">QE</span>
         <span class="badge live">Live</span>
         <span class="product-name">QuickEstimate</span>
         <p class="product-desc">AI-powered job estimates for contractors — talk or type a job, get a professional estimate in seconds.</p>
       </a>
       <a class="product-card" href="https://www.myhomethreesixty.com" target="_blank" rel="noopener">
+        <span class="product-logo">H3</span>
         <span class="badge live">Live</span>
         <span class="product-name">Home360</span>
         <p class="product-desc">An intelligent home ownership platform for tracking, maintaining, and understanding your home.</p>
       </a>
       <div class="product-card disabled">
+        <span class="product-logo">PC</span>
         <span class="badge soon">Coming soon</span>
         <span class="product-name">Pora Cloud</span>
         <p class="product-desc">AI-powered data intelligence — turning messy information into usable, structured intelligence.</p>
       </div>
+      <a class="product-card" href="https://www.getrentfast.com" target="_blank" rel="noopener">
+        <span class="product-logo">RF</span>
+        <span class="badge live">Live</span>
+        <span class="product-name">RentFast</span>
+        <p class="product-desc">Fast, transparent rent collection for independent property managers — no subscription, just faster payouts.</p>
+      </a>
+      <div class="product-card disabled">
+        <span class="product-logo">VV</span>
+        <span class="badge soon">In development</span>
+        <span class="product-name">Vendor Vault</span>
+        <p class="product-desc">Details coming soon.</p>
+      </div>
+      <a class="product-card" href="https://www.monpora.com" target="_blank" rel="noopener">
+        <span class="product-logo">LH</span>
+        <span class="badge live">Live</span>
+        <span class="product-name">LegacyHub</span>
+        <p class="product-desc">One calm, shared workspace for families coordinating tasks, documents, and planning after a loss.</p>
+      </a>
+      <a class="product-card" href="https://www.seasoneds.com" target="_blank" rel="noopener">
+        <span class="product-logo">SE</span>
+        <span class="badge live">Live</span>
+        <span class="product-name">Seasoneds</span>
+        <p class="product-desc">The authority content platform for 50+ professionals — travel, finance, wellness, business, and more.</p>
+      </a>
+      <a class="product-card" href="https://www.tripsnearby.com" target="_blank" rel="noopener">
+        <span class="product-logo">TN</span>
+        <span class="badge live">Live</span>
+        <span class="product-name">TripsNearby</span>
+        <p class="product-desc">Personalized US road trips and weekend getaways within your chosen driving time and budget.</p>
+      </a>
+      <a class="product-card" href="https://www.pricedwise.com" target="_blank" rel="noopener">
+        <span class="product-logo">PW</span>
+        <span class="badge live">Live</span>
+        <span class="product-name">PricedWise</span>
+        <p class="product-desc">Calculate a sustainable freelance or consulting rate based on your real income goals and capacity.</p>
+      </a>
+      <a class="product-card" href="https://www.onboardstudio.app" target="_blank" rel="noopener">
+        <span class="product-logo">OS</span>
+        <span class="badge live">Live</span>
+        <span class="product-name">OnboardStudio</span>
+        <p class="product-desc">Generate a polished client onboarding kit — welcome messages, questionnaires, and checklists.</p>
+      </a>
+      <a class="product-card" href="https://www.zerosalesreps.com" target="_blank" rel="noopener">
+        <span class="product-logo">ZS</span>
+        <span class="badge live">Live</span>
+        <span class="product-name">ZeroSalesReps</span>
+        <p class="product-desc">Autonomous customer acquisition for early-stage SaaS — finds, nurtures, and converts leads automatically.</p>
+      </a>
+      <a class="product-card" href="https://www.naijapacks.com" target="_blank" rel="noopener">
+        <span class="product-logo">NP</span>
+        <span class="badge live">Live</span>
+        <span class="product-name">NaijaPacks</span>
+        <p class="product-desc">Authentic Nigerian food from local caterers, delivered fast across US cities.</p>
+      </a>
+      <a class="product-card" href="https://www.theaiaesthetician.com" target="_blank" rel="noopener">
+        <span class="product-logo">AI</span>
+        <span class="badge live">Live</span>
+        <span class="product-name">AI Aesthetician</span>
+        <p class="product-desc">An AI front desk for med spas that answers missed calls and books consultations 24/7.</p>
+      </a>
+      <a class="product-card" href="https://www.coachedbybukky.com" target="_blank" rel="noopener">
+        <span class="product-logo">CB</span>
+        <span class="badge live">Live</span>
+        <span class="product-name">Coached by Bukky</span>
+        <p class="product-desc">Business coaching for women professionals 45+ turning experience into a service-based business.</p>
+      </a>
     </div>
 
     <footer>
-      PIAX · Principium Technology — internal access hub, not a public product.
+      PIAX · Principium Technology — internal tools directory.
     </footer>
   </div>
 </body>
