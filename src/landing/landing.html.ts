@@ -173,12 +173,12 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
         <span class="product-name">Home360</span>
         <p class="product-desc">An intelligent home ownership platform for tracking, maintaining, and understanding your home.</p>
       </a>
-      <div class="product-card disabled">
+      <a class="product-card" href="https://www.poradata.com" target="_blank" rel="noopener">
         <span class="product-logo">PC</span>
-        <span class="badge soon">Coming soon</span>
+        <span class="badge soon">Beta</span>
         <span class="product-name">Pora Cloud</span>
-        <p class="product-desc">AI-powered data intelligence — turning messy information into usable, structured intelligence.</p>
-      </div>
+        <p class="product-desc">AI-powered data intelligence — turning messy information into usable, structured intelligence. Development ongoing, open for testing.</p>
+      </a>
       <a class="product-card" href="https://www.getrentfast.com" target="_blank" rel="noopener">
         <span class="product-logo">RF</span>
         <span class="badge live">Live</span>
