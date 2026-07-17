@@ -3,6 +3,7 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Principium Technology's product portfolio and consulting practice — real, live products across real estate, small business tools, 50+ lifestyle content, data & risk, and consumer marketplaces." />
 <title>PIAX — Principium Identity, Access &amp; Experience Platform</title>
 <style>
   :root {
@@ -46,7 +47,7 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
     font-size: 18px;
     color: var(--text-dim);
     margin: 0 0 40px;
-    max-width: 640px;
+    max-width: 680px;
   }
   h2 {
     font-size: 22px;
@@ -54,29 +55,23 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
     color: var(--text);
   }
   p { color: var(--text-dim); font-size: 16px; margin: 0 0 12px; }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-    margin-top: 20px;
+  .category-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 40px 0 4px;
   }
-  .infra-item {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px;
+  .category-blurb {
+    font-size: 14px;
+    color: var(--text-dim);
+    margin: 0 0 4px;
+    max-width: 640px;
   }
-  .infra-item h3 {
-    margin: 0 0 8px;
-    font-size: 15px;
-    color: var(--accent-light);
-  }
-  .infra-item p { font-size: 14px; margin: 0; }
   .products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
-    margin-top: 20px;
+    margin-top: 16px;
   }
   .product-card {
     background: var(--bg-card);
@@ -132,6 +127,57 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
     color: var(--text-dim);
     border: 1px solid var(--border);
   }
+  .consulting-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    margin-top: 20px;
+  }
+  .consulting-list {
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 10px 24px;
+  }
+  .consulting-list li {
+    font-size: 14px;
+    color: var(--text-dim);
+    padding-left: 18px;
+    position: relative;
+  }
+  .consulting-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent-light);
+  }
+  .consulting-link {
+    display: inline-block;
+    color: var(--accent-light);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
+  }
+  .consulting-link:hover { color: var(--text); border-color: var(--text); }
+  .consulting-tag {
+    color: var(--accent-light);
+    font-weight: 600;
+    font-size: 15px;
+    margin: 0 0 16px;
+  }
+  .pillar-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 28px 0 8px;
+  }
+  .pillar-title:first-of-type { margin-top: 0; }
   footer {
     margin-top: 72px;
     padding-top: 24px;
@@ -143,23 +189,37 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
 </head>
 <body>
   <div class="wrap">
-    <span class="eyebrow">Principium Technology · Internal</span>
+    <span class="eyebrow">Principium Technology · Portfolio Overview</span>
     <h1>PI<span>AX</span></h1>
     <p class="subtitle">
-      Principium Identity, Access &amp; Experience Platform — a single directory
-      of every product Principium Technology has built. Pick a tool below and
-      sign in, sign up, or start a trial the normal way — same as any other user.
+      Principium Technology builds and operates a portfolio of applied-AI
+      products — spanning real estate, small business tools, 50+ lifestyle
+      content, data &amp; risk, and consumer marketplaces — alongside a
+      Fortune 500-grade enterprise consulting practice. This page is a live
+      look at what we've built and how to access it.
     </p>
 
-    <h2>What PIAX is</h2>
+    <h2>What we do</h2>
     <p>
-      Each Principium product manages its own accounts, trials, and billing,
-      exactly like it does for any other customer. PIAX doesn't change or
-      bypass that — it's just one page with a link to everything we've built,
-      so you don't have to remember a dozen different URLs.
+      Principium Technology is a builder and operator, not just an idea.
+      We ship real, live products across the categories below, each solving
+      a specific problem for a specific customer — from contractors and
+      landlords to solo consultants and grieving families. Alongside product
+      development, our consulting practice delivers enterprise-grade AI,
+      transformation, and risk engagements for Fortune 500-caliber clients —
+      informing and funding everything we build.
     </p>
 
-    <h2>Products</h2>
+    <h2>What we're building</h2>
+    <p>
+      Every product below is real and reachable today — click through and
+      sign up, start a trial, or explore exactly as any customer would. Some
+      are established and monetizing, others are in active beta or early
+      development.
+    </p>
+
+    <h3 class="category-title">PropTech &amp; Real Estate</h3>
+    <p class="category-blurb">Software for the people who build, own, manage, and rent real estate.</p>
     <div class="products">
       <a class="product-card" href="https://www.quickestimate.ai" target="_blank" rel="noopener">
         <span class="product-logo">QE</span>
@@ -173,30 +233,63 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
         <span class="product-name">Home360</span>
         <p class="product-desc">An intelligent home ownership platform for tracking, maintaining, and understanding your home.</p>
       </a>
-      <a class="product-card" href="https://www.poradata.com" target="_blank" rel="noopener">
-        <span class="product-logo">PC</span>
-        <span class="badge soon">Beta</span>
-        <span class="product-name">Pora Cloud</span>
-        <p class="product-desc">AI-powered data intelligence — turning messy information into usable, structured intelligence. Development ongoing, open for testing.</p>
-      </a>
       <a class="product-card" href="https://www.getrentfast.com" target="_blank" rel="noopener">
         <span class="product-logo">RF</span>
         <span class="badge live">Live</span>
         <span class="product-name">RentFast</span>
         <p class="product-desc">Fast, transparent rent collection for independent property managers — no subscription, just faster payouts.</p>
       </a>
+    </div>
+
+    <h3 class="category-title">Founder &amp; Small Business Tools</h3>
+    <p class="category-blurb">Practical, revenue-ready tools for coaches, consultants, freelancers, and early-stage founders.</p>
+    <div class="products">
+      <a class="product-card" href="https://www.onboardstudio.app" target="_blank" rel="noopener">
+        <span class="product-logo">OS</span>
+        <span class="badge live">Live</span>
+        <span class="product-name">OnboardStudio</span>
+        <p class="product-desc">Generate a polished client onboarding kit — welcome messages, questionnaires, and checklists.</p>
+      </a>
+      <a class="product-card" href="https://www.pricedwise.com" target="_blank" rel="noopener">
+        <span class="product-logo">PW</span>
+        <span class="badge live">Live</span>
+        <span class="product-name">PricedWise</span>
+        <p class="product-desc">Calculate a sustainable freelance or consulting rate based on your real income goals and capacity.</p>
+      </a>
+      <a class="product-card" href="https://www.zerosalesreps.com" target="_blank" rel="noopener">
+        <span class="product-logo">ZS</span>
+        <span class="badge live">Live</span>
+        <span class="product-name">ZeroSalesReps</span>
+        <p class="product-desc">Autonomous customer acquisition for early-stage SaaS — finds, nurtures, and converts leads automatically.</p>
+      </a>
+      <a class="product-card" href="https://www.theaiaesthetician.com" target="_blank" rel="noopener">
+        <span class="product-logo">AI</span>
+        <span class="badge live">Live</span>
+        <span class="product-name">AI Aesthetician</span>
+        <p class="product-desc">An AI front desk for med spas that answers missed calls and books consultations 24/7.</p>
+      </a>
+    </div>
+
+    <h3 class="category-title">Data, Risk &amp; Business Intelligence</h3>
+    <p class="category-blurb">Turning messy information and third-party relationships into structured, manageable risk.</p>
+    <div class="products">
+      <a class="product-card" href="https://www.poradata.com" target="_blank" rel="noopener">
+        <span class="product-logo">PC</span>
+        <span class="badge soon">Beta</span>
+        <span class="product-name">Pora Cloud</span>
+        <p class="product-desc">AI-powered data intelligence — turning messy information into usable, structured intelligence. Development ongoing, open for testing.</p>
+      </a>
       <div class="product-card disabled">
         <span class="product-logo">VV</span>
         <span class="badge soon">In development</span>
         <span class="product-name">Vendor Vault</span>
-        <p class="product-desc">Details coming soon.</p>
+        <p class="product-desc">A free, cloud-based vendor risk management platform that enables organizations to efficiently discover, classify, and manage third-party vendor risk.</p>
       </div>
-      <a class="product-card" href="https://www.monpora.com" target="_blank" rel="noopener">
-        <span class="product-logo">LH</span>
-        <span class="badge live">Live</span>
-        <span class="product-name">LegacyHub</span>
-        <p class="product-desc">One calm, shared workspace for families coordinating tasks, documents, and planning after a loss.</p>
-      </a>
+    </div>
+
+    <h3 class="category-title">50+ Lifestyle &amp; Content</h3>
+    <p class="category-blurb">A content-led ecosystem serving one of the fastest-growing, highest-spending demographics in the US.</p>
+    <div class="products">
       <a class="product-card" href="https://www.seasoneds.com" target="_blank" rel="noopener">
         <span class="product-logo">SE</span>
         <span class="badge live">Live</span>
@@ -209,36 +302,6 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
         <span class="product-name">TripsNearby</span>
         <p class="product-desc">Personalized US road trips and weekend getaways within your chosen driving time and budget.</p>
       </a>
-      <a class="product-card" href="https://www.pricedwise.com" target="_blank" rel="noopener">
-        <span class="product-logo">PW</span>
-        <span class="badge live">Live</span>
-        <span class="product-name">PricedWise</span>
-        <p class="product-desc">Calculate a sustainable freelance or consulting rate based on your real income goals and capacity.</p>
-      </a>
-      <a class="product-card" href="https://www.onboardstudio.app" target="_blank" rel="noopener">
-        <span class="product-logo">OS</span>
-        <span class="badge live">Live</span>
-        <span class="product-name">OnboardStudio</span>
-        <p class="product-desc">Generate a polished client onboarding kit — welcome messages, questionnaires, and checklists.</p>
-      </a>
-      <a class="product-card" href="https://www.zerosalesreps.com" target="_blank" rel="noopener">
-        <span class="product-logo">ZS</span>
-        <span class="badge live">Live</span>
-        <span class="product-name">ZeroSalesReps</span>
-        <p class="product-desc">Autonomous customer acquisition for early-stage SaaS — finds, nurtures, and converts leads automatically.</p>
-      </a>
-      <a class="product-card" href="https://www.naijapacks.com" target="_blank" rel="noopener">
-        <span class="product-logo">NP</span>
-        <span class="badge live">Live</span>
-        <span class="product-name">NaijaPacks</span>
-        <p class="product-desc">Authentic Nigerian food from local caterers, delivered fast across US cities.</p>
-      </a>
-      <a class="product-card" href="https://www.theaiaesthetician.com" target="_blank" rel="noopener">
-        <span class="product-logo">AI</span>
-        <span class="badge live">Live</span>
-        <span class="product-name">AI Aesthetician</span>
-        <p class="product-desc">An AI front desk for med spas that answers missed calls and books consultations 24/7.</p>
-      </a>
       <a class="product-card" href="https://www.coachedbybukky.com" target="_blank" rel="noopener">
         <span class="product-logo">CB</span>
         <span class="badge live">Live</span>
@@ -247,8 +310,94 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
       </a>
     </div>
 
+    <h3 class="category-title">Family &amp; Life Transitions</h3>
+    <p class="category-blurb">Tools for the parts of life that don't come with a manual.</p>
+    <div class="products">
+      <a class="product-card" href="https://www.monpora.com" target="_blank" rel="noopener">
+        <span class="product-logo">LH</span>
+        <span class="badge live">Live</span>
+        <span class="product-name">LegacyHub</span>
+        <p class="product-desc">One calm, shared workspace for families coordinating tasks, documents, and planning after a loss.</p>
+      </a>
+    </div>
+
+    <h3 class="category-title">Consumer Marketplace</h3>
+    <p class="category-blurb">Direct-to-consumer products serving underserved communities.</p>
+    <div class="products">
+      <a class="product-card" href="https://www.naijapacks.com" target="_blank" rel="noopener">
+        <span class="product-logo">NP</span>
+        <span class="badge live">Live</span>
+        <span class="product-name">NaijaPacks</span>
+        <p class="product-desc">Authentic Nigerian food from local caterers, delivered fast across US cities.</p>
+      </a>
+    </div>
+
+    <h2>Consulting</h2>
+    <p class="consulting-tag">Principium Technology &amp; Partners — Comprehensive Digital Transformation &amp; Security Solutions</p>
+    <p>
+      Alongside our products, Principium Technology &amp; Partners runs a
+      boutique consulting practice that combines proprietary SaaS platforms
+      with deep expertise across data, AI, enterprise platforms, and
+      security — built for mid-market companies ($50M–$500M revenue) that
+      need enterprise-grade capability without enterprise-consultancy
+      overhead or pricing. 25+ years of combined enterprise experience,
+      fractional and project-based arrangements available.
+    </p>
+    <div class="consulting-card">
+      <h4 class="pillar-title">Proprietary Products &amp; SaaS</h4>
+      <ul class="consulting-list">
+        <li>Messaging &amp; communication platform — bulk/transactional SMS, WhatsApp Business, voice SMS, OTP &amp; alerts</li>
+        <li>ERP / CRM SaaS platform — sales &amp; CRM, inventory, HR &amp; payroll, accounting, reporting</li>
+        <li>Capital markets platform — investor CRM, portfolio management, trade operations, investor self-service portal</li>
+        <li>Security &amp; fraud risk management — VendorVault, SecurityAware, BEC Defense &amp; Monitoring Suite</li>
+      </ul>
+
+      <h4 class="pillar-title">Data, Analytics &amp; Integration</h4>
+      <ul class="consulting-list">
+        <li>BI &amp; conversational analytics — Qlik Sense, Power BI, predictive analytics, natural-language insight discovery</li>
+        <li>Data integration &amp; replication — Qlik CDC-based replication, real-time multi-source pipelines</li>
+        <li>Data engineering — Talend ETL/ELT, data quality &amp; governance, API integration</li>
+      </ul>
+
+      <h4 class="pillar-title">AI, IoT &amp; Engineering</h4>
+      <ul class="consulting-list">
+        <li>AI &amp; intelligent automation — machine learning, NLP, chatbots, computer vision</li>
+        <li>IoT solutions — device integration, remote monitoring, sensor analytics, smart dashboards</li>
+        <li>Custom software engineering — web, mobile, API development, cloud-native, modernization</li>
+        <li>Cloud, DevOps &amp; platform engineering — infrastructure, CI/CD, deployment automation</li>
+      </ul>
+
+      <h4 class="pillar-title">Enterprise Platforms &amp; Cybersecurity</h4>
+      <ul class="consulting-list">
+        <li>ServiceNow &amp; enterprise service management — ITSM, CMDB, workflow automation</li>
+        <li>Atlassian &amp; Jira transformation — cloud migration, Jira Service Management, Confluence</li>
+        <li>Cybersecurity, IAM &amp; Zero Trust — identity governance, MFA, conditional access, endpoint security</li>
+        <li>Vendor risk &amp; security governance — audits, BEC/fraud risk assessment, continuous compliance monitoring</li>
+        <li>Managed services &amp; resource augmentation — 24×7 support, platform administration, staffing</li>
+      </ul>
+
+      <h4 class="pillar-title">Engagement Models</h4>
+      <ul class="consulting-list">
+        <li>Project-based consulting — scoped from focused strategic assessments through full-scale platform implementations</li>
+        <li>Managed services &amp; retainers — ongoing monitoring, platform administration, and staffing support, sized to fit</li>
+        <li>SaaS subscriptions — VendorVault and SecurityAware available as flexible, self-serve subscriptions, plus custom enterprise pricing</li>
+      </ul>
+
+      <h4 class="pillar-title">Why Principium &amp; Partners</h4>
+      <ul class="consulting-list">
+        <li>End-to-end — strategy, implementation, and ongoing managed services</li>
+        <li>Proprietary technology paired with deep consulting expertise</li>
+        <li>Mid-market focused — boutique responsiveness enterprise consultancies can't match</li>
+        <li>Security-first in every engagement, not an afterthought</li>
+        <li>Ground-truth expertise — $73B+ in transactions protected, 5,000+ domains secured at scale</li>
+        <li>Scalable — from a single assessment to a multi-year strategic partnership</li>
+      </ul>
+
+      <a class="consulting-link" href="https://principiumtechnology.com" target="_blank" rel="noopener">Visit Principium Technology →</a>
+    </div>
+
     <footer>
-      PIAX · Principium Technology — internal tools directory.
+      PIAX · Principium Technology — a live look at our product portfolio and consulting practice.
     </footer>
   </div>
 </body>
