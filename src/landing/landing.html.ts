@@ -127,27 +127,45 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
     color: var(--text-dim);
     border: 1px solid var(--border);
   }
-  .consulting-card {
+  .consulting-tag {
+    color: var(--accent-light);
+    font-weight: 600;
+    font-size: 15px;
+    margin: 0 0 16px;
+  }
+  .consulting-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 16px;
+  }
+  .consulting-pillar-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 14px;
-    padding: 28px;
-    margin-top: 20px;
+    padding: 24px;
+  }
+  .pillar-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 12px;
   }
   .consulting-list {
     list-style: none;
     padding: 0;
-    margin: 4px 0 24px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 10px 24px;
+    margin: 0;
   }
   .consulting-list li {
     font-size: 14px;
     color: var(--text-dim);
     padding-left: 18px;
     position: relative;
+    margin-bottom: 8px;
   }
+  .consulting-list li:last-child { margin-bottom: 0; }
   .consulting-list li::before {
     content: "→";
     position: absolute;
@@ -156,6 +174,7 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
   }
   .consulting-link {
     display: inline-block;
+    margin-top: 20px;
     color: var(--accent-light);
     font-weight: 600;
     text-decoration: none;
@@ -163,21 +182,6 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
     padding-bottom: 2px;
   }
   .consulting-link:hover { color: var(--text); border-color: var(--text); }
-  .consulting-tag {
-    color: var(--accent-light);
-    font-weight: 600;
-    font-size: 15px;
-    margin: 0 0 16px;
-  }
-  .pillar-title {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--accent-light);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin: 28px 0 8px;
-  }
-  .pillar-title:first-of-type { margin-top: 0; }
   footer {
     margin-top: 72px;
     padding-top: 24px;
@@ -202,13 +206,86 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
     <h2>What we do</h2>
     <p>
       Principium Technology is a builder and operator, not just an idea.
-      We ship real, live products across the categories below, each solving
-      a specific problem for a specific customer — from contractors and
-      landlords to solo consultants and grieving families. Alongside product
-      development, our consulting practice delivers enterprise-grade AI,
-      transformation, and risk engagements for Fortune 500-caliber clients —
-      informing and funding everything we build.
+      Our consulting practice delivers enterprise-grade AI, transformation,
+      and risk engagements — informing and funding a growing portfolio of
+      real, live products, each solving a specific problem for a specific
+      customer, from contractors and landlords to solo consultants and
+      families.
     </p>
+
+    <h2>Consulting</h2>
+    <p class="consulting-tag">Principium Technology &amp; Partners — Comprehensive Digital Transformation &amp; Security Solutions</p>
+    <p>
+      Principium Technology &amp; Partners runs a boutique consulting
+      practice that combines proprietary SaaS platforms with deep expertise
+      across data, AI, enterprise platforms, and security — 25+ years of
+      combined enterprise experience, serving clients from growing teams to
+      Fortune 500 organizations. Fractional and project-based arrangements
+      available.
+    </p>
+    <div class="consulting-grid">
+      <div class="consulting-pillar-card">
+        <h4 class="pillar-title">Proprietary Products &amp; SaaS</h4>
+        <ul class="consulting-list">
+          <li>Messaging &amp; communication platform — bulk/transactional SMS, WhatsApp Business, voice SMS, OTP &amp; alerts</li>
+          <li>ERP / CRM SaaS platform — sales &amp; CRM, inventory, HR &amp; payroll, accounting, reporting</li>
+          <li>Capital markets platform — investor CRM, portfolio management, trade operations, investor self-service portal</li>
+          <li>Security &amp; fraud risk management — VendorVault, SecurityAware, BEC Defense &amp; Monitoring Suite</li>
+        </ul>
+      </div>
+
+      <div class="consulting-pillar-card">
+        <h4 class="pillar-title">Data, Analytics &amp; Integration</h4>
+        <ul class="consulting-list">
+          <li>BI &amp; conversational analytics — Qlik Sense, Power BI, predictive analytics, natural-language insight discovery</li>
+          <li>Data integration &amp; replication — Qlik CDC-based replication, real-time multi-source pipelines</li>
+          <li>Data engineering — Talend ETL/ELT, data quality &amp; governance, API integration</li>
+        </ul>
+      </div>
+
+      <div class="consulting-pillar-card">
+        <h4 class="pillar-title">AI, IoT &amp; Engineering</h4>
+        <ul class="consulting-list">
+          <li>AI &amp; intelligent automation — machine learning, NLP, chatbots, computer vision</li>
+          <li>IoT solutions — device integration, remote monitoring, sensor analytics, smart dashboards</li>
+          <li>Custom software engineering — web, mobile, API development, cloud-native, modernization</li>
+          <li>Cloud, DevOps &amp; platform engineering — infrastructure, CI/CD, deployment automation</li>
+        </ul>
+      </div>
+
+      <div class="consulting-pillar-card">
+        <h4 class="pillar-title">Enterprise Platforms &amp; Cybersecurity</h4>
+        <ul class="consulting-list">
+          <li>ServiceNow &amp; enterprise service management — ITSM, CMDB, workflow automation</li>
+          <li>Atlassian &amp; Jira transformation — cloud migration, Jira Service Management, Confluence</li>
+          <li>Cybersecurity, IAM &amp; Zero Trust — identity governance, MFA, conditional access, endpoint security</li>
+          <li>Vendor risk &amp; security governance — audits, BEC/fraud risk assessment, continuous compliance monitoring</li>
+          <li>Managed services &amp; resource augmentation — 24×7 support, platform administration, staffing</li>
+        </ul>
+      </div>
+
+      <div class="consulting-pillar-card">
+        <h4 class="pillar-title">Engagement Models</h4>
+        <ul class="consulting-list">
+          <li>Project-based consulting — scoped from focused strategic assessments through full-scale platform implementations</li>
+          <li>Managed services &amp; retainers — ongoing monitoring, platform administration, and staffing support, sized to fit</li>
+          <li>SaaS subscriptions — VendorVault and SecurityAware available as flexible, self-serve subscriptions, plus custom enterprise pricing</li>
+        </ul>
+      </div>
+
+      <div class="consulting-pillar-card">
+        <h4 class="pillar-title">Why Principium &amp; Partners</h4>
+        <ul class="consulting-list">
+          <li>End-to-end — strategy, implementation, and ongoing managed services</li>
+          <li>Proprietary technology paired with deep consulting expertise</li>
+          <li>Boutique responsiveness with enterprise-grade capability — from growing teams to Fortune 500 clients</li>
+          <li>Security-first in every engagement, not an afterthought</li>
+          <li>Ground-truth expertise — $73B+ in transactions protected, 5,000+ domains secured at scale</li>
+          <li>Scalable — from a single assessment to a multi-year strategic partnership</li>
+        </ul>
+      </div>
+    </div>
+    <a class="consulting-link" href="https://principiumtechnology.com" target="_blank" rel="noopener">Visit Principium Technology →</a>
 
     <h2>What we're building</h2>
     <p>
@@ -328,72 +405,8 @@ export const LANDING_HTML = /* html */ `<!DOCTYPE html>
         <span class="product-logo">NP</span>
         <span class="badge live">Live</span>
         <span class="product-name">NaijaPacks</span>
-        <p class="product-desc">Authentic Nigerian food from local caterers, delivered fast across US cities.</p>
+        <p class="product-desc">Authentic West African food from local caterers, delivered fast across US cities.</p>
       </a>
-    </div>
-
-    <h2>Consulting</h2>
-    <p class="consulting-tag">Principium Technology &amp; Partners — Comprehensive Digital Transformation &amp; Security Solutions</p>
-    <p>
-      Alongside our products, Principium Technology &amp; Partners runs a
-      boutique consulting practice that combines proprietary SaaS platforms
-      with deep expertise across data, AI, enterprise platforms, and
-      security — built for mid-market companies ($50M–$500M revenue) that
-      need enterprise-grade capability without enterprise-consultancy
-      overhead or pricing. 25+ years of combined enterprise experience,
-      fractional and project-based arrangements available.
-    </p>
-    <div class="consulting-card">
-      <h4 class="pillar-title">Proprietary Products &amp; SaaS</h4>
-      <ul class="consulting-list">
-        <li>Messaging &amp; communication platform — bulk/transactional SMS, WhatsApp Business, voice SMS, OTP &amp; alerts</li>
-        <li>ERP / CRM SaaS platform — sales &amp; CRM, inventory, HR &amp; payroll, accounting, reporting</li>
-        <li>Capital markets platform — investor CRM, portfolio management, trade operations, investor self-service portal</li>
-        <li>Security &amp; fraud risk management — VendorVault, SecurityAware, BEC Defense &amp; Monitoring Suite</li>
-      </ul>
-
-      <h4 class="pillar-title">Data, Analytics &amp; Integration</h4>
-      <ul class="consulting-list">
-        <li>BI &amp; conversational analytics — Qlik Sense, Power BI, predictive analytics, natural-language insight discovery</li>
-        <li>Data integration &amp; replication — Qlik CDC-based replication, real-time multi-source pipelines</li>
-        <li>Data engineering — Talend ETL/ELT, data quality &amp; governance, API integration</li>
-      </ul>
-
-      <h4 class="pillar-title">AI, IoT &amp; Engineering</h4>
-      <ul class="consulting-list">
-        <li>AI &amp; intelligent automation — machine learning, NLP, chatbots, computer vision</li>
-        <li>IoT solutions — device integration, remote monitoring, sensor analytics, smart dashboards</li>
-        <li>Custom software engineering — web, mobile, API development, cloud-native, modernization</li>
-        <li>Cloud, DevOps &amp; platform engineering — infrastructure, CI/CD, deployment automation</li>
-      </ul>
-
-      <h4 class="pillar-title">Enterprise Platforms &amp; Cybersecurity</h4>
-      <ul class="consulting-list">
-        <li>ServiceNow &amp; enterprise service management — ITSM, CMDB, workflow automation</li>
-        <li>Atlassian &amp; Jira transformation — cloud migration, Jira Service Management, Confluence</li>
-        <li>Cybersecurity, IAM &amp; Zero Trust — identity governance, MFA, conditional access, endpoint security</li>
-        <li>Vendor risk &amp; security governance — audits, BEC/fraud risk assessment, continuous compliance monitoring</li>
-        <li>Managed services &amp; resource augmentation — 24×7 support, platform administration, staffing</li>
-      </ul>
-
-      <h4 class="pillar-title">Engagement Models</h4>
-      <ul class="consulting-list">
-        <li>Project-based consulting — scoped from focused strategic assessments through full-scale platform implementations</li>
-        <li>Managed services &amp; retainers — ongoing monitoring, platform administration, and staffing support, sized to fit</li>
-        <li>SaaS subscriptions — VendorVault and SecurityAware available as flexible, self-serve subscriptions, plus custom enterprise pricing</li>
-      </ul>
-
-      <h4 class="pillar-title">Why Principium &amp; Partners</h4>
-      <ul class="consulting-list">
-        <li>End-to-end — strategy, implementation, and ongoing managed services</li>
-        <li>Proprietary technology paired with deep consulting expertise</li>
-        <li>Mid-market focused — boutique responsiveness enterprise consultancies can't match</li>
-        <li>Security-first in every engagement, not an afterthought</li>
-        <li>Ground-truth expertise — $73B+ in transactions protected, 5,000+ domains secured at scale</li>
-        <li>Scalable — from a single assessment to a multi-year strategic partnership</li>
-      </ul>
-
-      <a class="consulting-link" href="https://principiumtechnology.com" target="_blank" rel="noopener">Visit Principium Technology →</a>
     </div>
 
     <footer>
